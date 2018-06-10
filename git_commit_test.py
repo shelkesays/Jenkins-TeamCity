@@ -11,4 +11,4 @@ def all_subdirs_of(dir='.'):
 
 
 latest_subdir = max(all_subdirs_of("tests"), key=os.path.getmtime)
-print(latest_subdir)
+print(latest_subdir.split(os.sep)[1])
