@@ -10,4 +10,5 @@ def all_subdirs_of(dir='.'):
   return result
 
 
-print(all_subdirs_of("tests"))
+latest_subdir = max(all_subdirs_of("tests"), key=os.path.getmtime)
+print(latest_subdir)
