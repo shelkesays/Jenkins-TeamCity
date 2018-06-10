@@ -1,0 +1,6 @@
+#!/bin/bash
+# Jenkins-build trigger
+# Username
+machine=$(uname -n)
+echo "Notifying Jenkins Server to execute a Build on " $machine
+python git_commit_test.py
