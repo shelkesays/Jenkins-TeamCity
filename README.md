@@ -26,6 +26,10 @@ E.g.:
 
 Now for every commit this script will be executed.
 
+**NOTE:** Just adding folder wont help in above script. There has to be at least one
+empty file inside the folder created, like `test_2` folder has `test.txt`. Then
+only it will be available for `git add` and `git commit` commands.
+
 
 
 
