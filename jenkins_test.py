@@ -42,7 +42,7 @@ jobs = server.get_jobs(view_name="TEST_VIEW")
 print("Jobs: ", jobs)
 
 server.delete_view("TEST_VIEW")
-print(views)
+print("Views:", views)
 
 # Get all plugins
 plugins = server.get_plugins()
