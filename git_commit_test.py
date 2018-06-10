@@ -5,7 +5,7 @@ def all_subdirs_of(dir='.'):
   result = []
   for item in os.listdir(dir):
     path = os.path.join(dir, item)
-    if os.path.isdir():
+    if os.path.isdir(path):
       result.append(path)
   return result
 
