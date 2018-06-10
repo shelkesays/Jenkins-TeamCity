@@ -10,4 +10,4 @@ def all_subdirs_of(dir='.'):
   return result
 
 
-print(all_subdirs_of())
+print(all_subdirs_of("tests"))
