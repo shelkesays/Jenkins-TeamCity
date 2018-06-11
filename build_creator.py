@@ -18,10 +18,8 @@ lines = job_file.readlines()
 # Strip all new lines
 lines =map(lambda s: s.strip(), lines)
 recent_files = []
-print(lines)
 if lines:
     recent_files = set(latest_subdir) - set(lines)
-    print(recent_files)
     recent_files = list(recent_files)
 else:
     recent_files = recent_files + latest_subdir
@@ -35,12 +33,15 @@ server = jenkins.Jenkins("http://localhost:8080", username="srahul07", password=
 job_file = open("processed.log", "a+")
 for item in recent_files:
     job = item.split(os.sep)[-1]
-    print(job)
     # Create a job and make a build
     # NOTE: Might need to change this for TeamCity
-    server.create_job(job, jenkins.EMPTY_CONFIG_XML)
+    job_exists = server.get_job_name(job)
+    if not job_exists:
+        print("Creating a new job:", job)
+        server.create_job(job, jenkins.EMPTY_CONFIG_XML)
+    print("Start new Build: ", job)
     server.build_job(job)
-job_file.write("\n".join(recent_files))
+    job_file.write(item + "\n")
 
 job_file.close()
 jobs = server.get_jobs()
