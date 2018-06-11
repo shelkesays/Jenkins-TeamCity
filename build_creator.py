@@ -13,7 +13,7 @@ def all_subdirs_of(dir='.'):
 
 latest_subdir = max(all_subdirs_of("tests"), key=os.path.getmtime)
 job_file = open("processed.log", "a+")
-lines = job_file.read()
+lines = job_file.readlines()
 print(lines)
 recent_files = set(latest_subdir) - set(job_file)
 recent_files = list(recent_files)
