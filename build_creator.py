@@ -11,7 +11,8 @@ def all_subdirs_of(dir='.'):
   return result
 
 
-latest_subdir = max(all_subdirs_of("tests"), key=os.path.getmtime)
+# latest_subdir = max(all_subdirs_of("tests"), key=os.path.getmtime)
+latest_subdir = all_subdirs_of("tests")
 job_file = open("processed.log", "a+")
 lines = job_file.readlines()
 recent_files = []
