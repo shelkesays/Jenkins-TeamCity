@@ -23,6 +23,7 @@ server = jenkins.Jenkins("http://localhost:8080", username="srahul07", password=
 
 for item in recent_files:
     job = item.split(os.sep)[-1]
+    print(job)
     server.create_job(job, jenkins.EMPTY_CONFIG_XML)
     server.build_job(job)
     job_file.write(item)
