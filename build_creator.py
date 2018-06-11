@@ -16,7 +16,7 @@ latest_subdir = all_subdirs_of("tests")
 job_file = open("processed.log", "r+")
 lines = job_file.readlines()
 # Strip all new lines
-lines =map(lambda s: s.strip(), lines)
+lines = map(lambda s: s.strip(), lines)
 recent_files = []
 if lines:
     recent_files = set(latest_subdir) - set(lines)
