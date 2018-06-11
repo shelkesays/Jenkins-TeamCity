@@ -3,4 +3,5 @@
 # Username
 machine=$(uname -n)
 echo "Notifying Jenkins Server to execute a Build on " $machine
+# Logic to check if commit is done or merged to a particular branch / master branch
 python git_commit_test.py

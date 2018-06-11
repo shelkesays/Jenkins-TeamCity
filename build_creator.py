@@ -10,6 +10,9 @@ def all_subdirs_of(dir='.'):
       result.append(path)
   return result
 
+# Check if last build was processed 2 days back
+# If yes, start processing
+# Else, exit / return 0
 
 # latest_subdir = max(all_subdirs_of("tests"), key=os.path.getmtime)
 latest_subdir = all_subdirs_of("tests")
