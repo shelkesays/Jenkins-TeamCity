@@ -14,8 +14,10 @@ def all_subdirs_of(dir='.'):
 latest_subdir = max(all_subdirs_of("tests"), key=os.path.getmtime)
 job_file = open("processed.log", "a+")
 lines = job_file.read()
+print(lines)
 recent_files = set(latest_subdir) - set(job_file)
 recent_files = list(recent_files)
+print(recent_files)
 #job_name = latest_subdir.split(os.sep)[1]
 
 # Connect to Jenkins
