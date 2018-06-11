@@ -2,7 +2,9 @@
 # Jenkins-build trigger
 # Username
 BASEDIR=$(dirname $(readlink -f $0))
-VENV=venv/bin/activate
+VENV=venv
+ACTIVATE=$VENV/bin/activate
+STATUS=false
 machine=$(uname -n)
 
 echo "Notifying Jenkins Server to execute a Build on " $machine
@@ -10,5 +12,23 @@ echo "Notifying Jenkins Server to execute a Build on " $machine
 
 cd $BASEDIR
 cd ../..
-source $VENV
+
+# Check if venv folder exists, if it does not then create it
+if [ ! -d "$VENV" ]; then
+  # Control will enter here if $VENV doesn't exist.
+  virtualenv $VENV
+  STATUS=true
+fi
+
+# Source virtual environment
+source $ACTIVATE
+
+# Install required dependencies if not yet installed
+if [ "$STATUS" = true ]; then
+    # if status is true, means need to install all the required libraries
+    pip install --upgrade pip
+    pip install -r requirements.txt
+fi
+
+# Start processing jenkins jobs
 python last_dir_processed.py
