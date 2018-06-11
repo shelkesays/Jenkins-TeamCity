@@ -43,5 +43,5 @@ else:
 # print("Jobs: ", jobs)
 
 # Write current timestamp in log file
-with open("last_processed_timestamp.log", "w", newline="\n") as process_file:
+with open(config.LAST_PROCESSED_TIMESTAMP_LOG, "w", newline="\n") as process_file:
     process_file.write(str(time.time()))
