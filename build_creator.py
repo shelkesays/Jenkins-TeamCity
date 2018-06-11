@@ -37,7 +37,7 @@ for item in recent_files:
     # NOTE: Might need to change this for TeamCity
     server.create_job(job, jenkins.EMPTY_CONFIG_XML)
     server.build_job(job)
-    job_file.write(item)
+    job_file.write(item + "\n")
 
 job_file.close()
 jobs = server.get_jobs()
