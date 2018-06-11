@@ -16,6 +16,7 @@ job_file = open("processed.log", "a+")
 lines = job_file.readlines()
 print(lines)
 recent_files = set(latest_subdir) - set(job_file)
+print(recent_files)
 recent_files = list(recent_files)
 print(recent_files)
 #job_name = latest_subdir.split(os.sep)[1]
