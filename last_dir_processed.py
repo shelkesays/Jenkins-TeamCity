@@ -37,8 +37,8 @@ for item in recent_files:
     print("Start new Build: ", job)
     server.build_job(job)
 
-jobs = server.get_jobs()
-print("Jobs: ", jobs)
+# jobs = server.get_jobs()
+# print("Jobs: ", jobs)
 
 # Write current timestamp in log file
 with open("last_processed_timestamp.log", "w", newline="\n") as process_file:
