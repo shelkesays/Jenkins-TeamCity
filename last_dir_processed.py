@@ -36,6 +36,8 @@ for item in recent_files:
         server.create_job(job, jenkins.EMPTY_CONFIG_XML)
     print("Start new Build: ", job)
     server.build_job(job)
+else:
+    print("No Build to create")
 
 # jobs = server.get_jobs()
 # print("Jobs: ", jobs)
