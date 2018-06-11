@@ -16,7 +16,8 @@ cd ../..
 # Check if venv folder exists, if it does not then create it
 if [ ! -d "$VENV" ]; then
   # Control will enter here if $VENV doesn't exist.
-  virtualenv $VENV
+  pip install --upgrade virtualenv
+  virtualenv -p python3 $VENV
   STATUS=true
 fi
 
@@ -32,3 +33,6 @@ fi
 
 # Start processing jenkins jobs
 python last_dir_processed.py
+
+# Deactivate virtual environment
+deactivate
