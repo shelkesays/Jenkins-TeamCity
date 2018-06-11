@@ -5,9 +5,10 @@ BASEDIR=$(dirname $(readlink -f $0))
 VENV=venv/bin/activate
 machine=$(uname -n)
 
-echo "Notifying Jenkins Server to execute a Build on " $BASEDIR
+echo "Notifying Jenkins Server to execute a Build on " $machine
 # Logic to check if commit is done or merged to a particular branch / master branch
 
 cd $BASEDIR
+cd ../..
 source $VENV
 python last_dir_processed.py
