@@ -1,7 +1,13 @@
 #!/bin/bash
 # Jenkins-build trigger
 # Username
+BASEDIR=$(dirname $(readlink -f $0))
+VENV=venv/bin/activate
 machine=$(uname -n)
-echo "Notifying Jenkins Server to execute a Build on " $machine
+
+echo "Notifying Jenkins Server to execute a Build on " $BASEDIR
 # Logic to check if commit is done or merged to a particular branch / master branch
-python git_commit_test.py
+
+cd $BASEDIR
+source $VENV
+python last_dir_processed.py
