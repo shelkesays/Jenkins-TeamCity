@@ -26,16 +26,17 @@ recent_files = [item for item in latest_subdir if os.path.getmtime(item) > float
 # Connect to Jenkins
 # NOTE: Might need to change this for TeamCity
 server = jenkins.Jenkins(config.SERVER_URL, username=config.SERVER_USER, password=config.SERVER_PASSWORD)
-for item in recent_files:
-    job = item.split(os.sep)[-1]
-    # Create a job and make a build
-    # NOTE: Might need to change this for TeamCity
-    job_exists = server.get_job_name(job)
-    if not job_exists:
-        print("Creating a new job:", job)
-        server.create_job(job, jenkins.EMPTY_CONFIG_XML)
-    print("Start new Build: ", job)
-    server.build_job(job)
+if recent_files:
+    for item in recent_files:
+        job = item.split(os.sep)[-1]
+        # Create a job and make a build
+        # NOTE: Might need to change this for TeamCity
+        job_exists = server.get_job_name(job)
+        if not job_exists:
+            print("Creating a new job:", job)
+            server.create_job(job, jenkins.EMPTY_CONFIG_XML)  #  config.XML_CONFIG)
+        print("Start new Build: ", job)
+        server.build_job(job)
 else:
     print("No Build to create")
 
