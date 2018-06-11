@@ -1,10 +1,12 @@
 #!/bin/bash
 # Jenkins-build trigger
-# Username
+
 BASEDIR=$(dirname $(readlink -f $0))
 VENV=venv
 ACTIVATE=$VENV/bin/activate
 STATUS=false
+
+# Username
 machine=$(uname -n)
 
 echo "Notifying Jenkins Server to execute a Build on " $machine
