@@ -10,6 +10,7 @@ def all_subdirs_of(dir='.'):
       result.append(path)
   return result
 
+
 # Check if last build was processed 2 days back
 # If yes, start processing
 # Else, exit / return 0
