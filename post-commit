@@ -16,7 +16,6 @@ cd ../..
 # Check if venv folder exists, if it does not then create it
 if [ ! -d "$VENV" ]; then
   # Control will enter here if $VENV doesn't exist.
-  # pip install --upgrade virtualenv
   virtualenv -p python3 $VENV
   STATUS=true
 fi
