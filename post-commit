@@ -33,6 +33,10 @@ if [ "$STATUS" = true ]; then
     pip install -r requirements.txt
 fi
 
+# check current git branch
+BRANCH=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+echo $BRANCH
+
 # Start processing jenkins jobs
 python last_dir_processed.py
 
