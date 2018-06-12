@@ -36,9 +36,13 @@ fi
 # check current git branch
 BRANCH=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 echo $BRANCH
-
-# Start processing jenkins jobs
-python last_dir_processed.py
+if [ "$BRANCH" = "master" ]; then
+    # if branch is master, then only proceed.
+    # Start processing jenkins jobs
+    python last_dir_processed.py
+else
+    echo "Current Branch $BRANCH, Nothing to execute."
+fi
 
 # Deactivate virtual environment
 deactivate
