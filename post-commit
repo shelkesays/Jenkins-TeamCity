@@ -1,6 +1,8 @@
 #!/bin/bash
 # Jenkins-build trigger
 
+echo "Executing post-commit hook"
+
 BASEDIR=$(dirname $(readlink -f $0))
 VENV=venv
 ACTIVATE=$VENV/bin/activate
