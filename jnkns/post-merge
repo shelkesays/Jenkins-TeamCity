@@ -7,7 +7,7 @@ BASEDIR=$(dirname $(readlink -f $0))
 VENV=venv
 ACTIVATE=$VENV/bin/activate
 STATUS=false
-CIDIR=jenkins
+CIDIR=jnkns
 
 # Username
 machine=$(uname -n)
