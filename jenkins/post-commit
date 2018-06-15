@@ -38,9 +38,11 @@ if [ "$STATUS" = true ]; then
     pip install -r requirements.txt
 fi
 
+echo "Lets: "
+echo $(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 # check current git branch
 BRANCH=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-
+echo "$BRANCH"
 if [ "$BRANCH" = "master" ]; then
     # if branch is master, then only proceed.
     # Start processing jenkins jobs
