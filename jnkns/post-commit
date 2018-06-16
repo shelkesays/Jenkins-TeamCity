@@ -39,7 +39,8 @@ if [ "$STATUS" = true ]; then
 fi
 
 # check current git branch
-BRANCH=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+# $(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 if [ "$BRANCH" = "rahul" ]; then
     # if branch is master, then only proceed.
     # Start processing jenkins jobs
