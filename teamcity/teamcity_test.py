@@ -1,8 +1,12 @@
-from pyteamcity import pyteamcity as teamcity
+from pyteamcity import TeamCity
+import requests
+
+import config
 
 # Testing teamcity
 
-server = teamcity.TeamCity(server="localhost", port=8111, username="srahul07", password="rahul")
+server = TeamCity(server=config.SERVER_HOST, port=config.SERVER_PORT, 
+                    username=config.SERVER_USER, password=config.SERVER_PASSWORD)
 
 print("Current Jobs", server.get_projects())
 

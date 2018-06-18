@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="" ?>
-<matrix-project>
-    <name>Test Project</name>
-    <description>This is a test configuration file</description>
-</matrix-project>
+<?xml version="1.0" encoding="UTF-8" ?>
+<newBuildTypeDescription name="Test_Builder" 
+    sourceBuildTypeLocator="XmlImport_Builder" 
+    copyAllAssociatedSettings='true' shareVCSRoots='false' />
