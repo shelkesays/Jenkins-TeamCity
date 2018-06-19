@@ -37,7 +37,7 @@ if xmldoc_root is not None:
     if recent_files:
         builders = []
         headers = {'Content-Type': 'application/xml'} # set what your server accepts
-        xml_url = "{0}/httpAuth/app/rest/projects/id:{1}/buildTypes".format(config.SERVER_URL, "XmlImport")
+        xml_url = "{0}/httpAuth/app/rest/projects/id:{1}/buildTypes".format(config.SERVER_URL, config.PROJECT_ID)
         for item in recent_files:
             job = item.split(os.sep)[-1]
             # Create a job and make a build
