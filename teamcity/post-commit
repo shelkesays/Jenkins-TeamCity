@@ -1,5 +1,5 @@
 #!/bin/bash
-# Jenkins-build trigger
+# Teamcity-build trigger
 
 echo "Executing post-commit hook"
 
@@ -7,7 +7,7 @@ BASEDIR=$(dirname $(readlink -f $0))
 VENV=venv
 ACTIVATE=$VENV/bin/activate
 STATUS=false
-CIDIR=jnkns
+CIDIR=teamcity
 
 # Username
 machine=$(uname -n)
@@ -18,7 +18,7 @@ echo "Notifying Teamcity Server to execute a Build on " $machine
 cd $BASEDIR
 # Change directory to parent directory, since current directory is `.git/hooks/`
 cd ../..
-# Go in Jenkins directory
+# Go in teamcity directory
 cd $CIDIR
 
 # Check if venv folder exists, if it does not then create it
@@ -43,7 +43,7 @@ fi
 BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 if [ "$BRANCH" = "rahul" ]; then
     # if branch is master, then only proceed.
-    # Start processing jenkins jobs
+    # Start processing teamcity jobs
     python last_dir_processed.py
 else
     echo "Current Branch $BRANCH, Nothing to execute."

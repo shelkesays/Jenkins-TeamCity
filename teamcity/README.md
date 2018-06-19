@@ -1,4 +1,4 @@
-# Jenkins Test
+# Teamcity Test
 
 **Python version used:** `Python 3.5.2`
 
@@ -6,18 +6,21 @@
 
 `apt-get install krb5-config libkrb5-dev libssl-dev libsasl2-dev libsasl2-modules-gssapi-mit python3-dev`
 
+## Virtual environment installations
 
-## Generate Jenkins Crumb using following command [OPTIONAL]:
+`apt-get install virtualenv`
 
-`wget -q --auth-no-challenge --user <USER> --password <PASSWORD> --output-document - 'http://<Jenkins_URL>/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'`
+OR
 
-*The above command will generate Crumb in the following format:*
+`pip install virtualenv`
 
-`Jenkins-Crumb:<Hash>`
+The above command will install virtual environment
 
-E.g.:
+**Create a cirtual environment:** `virtualenv venv`
 
-`Jenkins-Crumb:4f538ebe9d8f08d1c3e1a8f72198475f`
+**Activate virtual environment:** `source venv/bin/activate`
+
+**Execute Python script:** `python <python file>` e.g. `python last_dir_processed.py`
 
 
 ## Git Notifications
@@ -29,6 +32,7 @@ Now for every commit this script will be executed.
 **NOTE:** Just adding folder wont help in above script. There has to be at least one
 empty file inside the folder created, like `test_2` folder has `test.txt`. Then
 only it will be available for `git add` and `git commit` commands.
+
 
 
 
