@@ -18,6 +18,9 @@ echo "Notifying Jenkins Server to execute a Build on " $machine
 cd $BASEDIR
 # Change directory to parent directory, since current directory is `.git/hooks/`
 cd ../..
+# Setting Git environment variables
+GIT_DIR=$(pwd)/.git
+GIT_WORK_TREE=$(pwd)
 # Go in Jenkins directory
 cd $CIDIR
 
