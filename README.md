@@ -1,26 +1,19 @@
-# Jenkins Test
+# Jenkins and Teamcity Test
 
-**Python version used:** `Python 3.5.2`
+Test scripts for learning jenkins and teamcity API.
 
-**Required Dependencies:**
+1. *Connect to server test:* Connect to jenkins and Teamcity server
+2. *Create new builds test:* Create new builds
+3. *Last directory updated processing test:* If any of the directory or file inside direcory is updated or new directory is created inside target directory, create a new build with the same name as the directory name and trigger it.
 
-`apt-get install krb5-config libkrb5-dev libssl-dev libsasl2-dev libsasl2-modules-gssapi-mit python3-dev`
+**Git hooks implemented:**
 
-
-## Generate Jenkins Crumb using following command [OPTIONAL]:
-
-`wget -q --auth-no-challenge --user <USER> --password <PASSWORD> --output-document - 'http://<Jenkins_URL>/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'`
-
-*The above command will generate Crumb in the following format:*
-
-`Jenkins-Crumb:<Hash>`
-
-E.g.:
-
-`Jenkins-Crumb:4f538ebe9d8f08d1c3e1a8f72198475f`
-
+1. post-commit
+2. post-merge
+3. pre-push
 
 ## Git Notifications
+
 1. Copy post-commit to `.git/hooks/post-commit`
 2. Make it executable  `chmod a+x .git/hooks/post-commit`
 
