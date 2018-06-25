@@ -16,7 +16,6 @@ def all_subdirs_of(dir='.'):
             result.append(path)
     return result
 
-
 # Get last build processed timestamp
 last_timestamp = 0
 with open(config.LAST_PROCESSED_TIMESTAMP_LOG, "r") as process_file:
