@@ -19,8 +19,8 @@ cd $BASEDIR
 # Change directory to parent directory, since current directory is `.git/hooks/`
 cd ../..
 # Setting Git environment variables
-GIT_DIR = $(pwd)/.git
-GIT_WORK_TREE = $(pwd)
+GIT_DIR=$(pwd)/.git
+GIT_WORK_TREE=$(pwd)
 # Go in teamcity directory
 cd $CIDIR
 
