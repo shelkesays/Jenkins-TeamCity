@@ -51,10 +51,10 @@
 					<con:settings>
 						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>						</con:setting>
 					</con:settings>
-					<con:endpoint>https://localhost:8111</con:endpoint>
+					<con:endpoint>http://localhost:8111</con:endpoint>
 					<con:request><![CDATA[<buildType id="test_a" name="test_a" projectId="XmlImport">
-<project id="XmlImport" name="XML Import" parentProjectId="" href="https://localhost:8111/admin/editProject.html?projectId=XmlImport" webUrl="https://localhost:8111/admin/editProject.html?projectId=XmlImport" />
-<template id="XmlImport_Template" name="template" templateFlag="true" projectName="XML Import" projectId="XmlImport" href="https://localhost:8111/admin/editBuild.html?id=template:XmlImport" />
+<project id="XmlImport" name="XML Import" parentProjectId="" href="http://localhost:8111/admin/editProject.html?projectId=XmlImport" webUrl="http://localhost:8111/admin/editProject.html?projectId=XmlImport" />
+<template id="XmlImport_Template" name="template" templateFlag="true" projectName="XML Import" projectId="XmlImport" href="http://localhost:8111/admin/editBuild.html?id=template:XmlImport" />
 <vcs-root-entries>
 <!--vcs-root-entry elements are not necessary-->
 </vcs-root-entries>

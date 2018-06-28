@@ -22,21 +22,33 @@ def get_xml_parser():
     return etree.XMLParser(ns_clean=True, recover=True, encoding='utf-8')
 
 
+def convert_string_toxml(string):
+    """ Convert string to xml
+    """
+    return etree.fromstring(string.encode('utf-8'), parser=get_xml_parser())
+
 def convert_xml_tostring(xml):
     """ Convert given xml to string
     """
     return etree.tostring(xml, encoding="utf-8", method="xml")
 
 
-def convert_xml_soup(file_path):
-    """ Read xml from the file provided and convert it to soup for processing
+def get_xml_root(file_path):
+    """ Read xml file and get its root
     """
     # Read copy buildtype XML configuration file
     xmldoc_root = None
     with open(file_path, 'r') as xml_file:
         xmldoc = etree.parse(xml_file)
         xmldoc_root = xmldoc.getroot()
+    return xmldoc_root
 
+
+def convert_xml_soup(file_path):
+    """ Read xml from the file provided and convert it to soup for processing
+    """
+    # Read copy buildtype XML configuration file
+    xmldoc_root = get_xml_root(file_path)
     if xmldoc_root is None:
         # TODO: Add exception handling in future
         return False
