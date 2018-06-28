@@ -9,7 +9,7 @@ SERVER_URL = "{0}://{1}:{2}".format(SERVER_PROTCOL, SERVER_HOST, SERVER_PORT)
 
 PROCESSED_LOG = "processed.log"
 LAST_PROCESSED_TIMESTAMP_LOG = "last_processed_timestamp.log" # XXXXXX
-SUB_DIR_OF = "testx"  # XXXXXX
+SUB_DIR_OF = "tests"  # XXXXXX
 
 COPY_BUILDTYPE_XML = "copybuildtype.xml"
 TRIGGER_BUILD_XML = "triggerbuild.xml"
