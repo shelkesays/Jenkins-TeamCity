@@ -1,3 +1,4 @@
+# Teamcity configurations
 SERVER_PROTCOL = "http"
 SERVER_HOST = "localhost"
 SERVER_PORT = 8111
@@ -15,7 +16,10 @@ TRIGGER_BUILD_XML = "triggerbuild.xml"
 PROJECT_ID = "XmlImport"
 SOURCE_ATTRIBUTE = "sourceBuildTypeLocator"
 TARGET_ATTRIBUTE = "name"
-SOURCE_BUILD_TYPE_ID = "XmlImport_Builder"
+SOURCE_BUILD_TYPE_ID = "XmlImport_Template"  # "XmlImport_Builder"
 TRIGGER_BUILDTYPE_ATTRIBUTE = "buildType"
 SOURCE_TRIGGER_BUILD_ATTRIBUTE = "id"
 TARGET_TRIGGER_BUILD_ATTRIBUTE = "id"
+
+# Project configuration in xml
+XML_PROJECT_CONFIG_FILE = "project_config.xml"

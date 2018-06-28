@@ -3,7 +3,6 @@ import time
 
 from lxml import etree
 import requests
-from requests.auth import HTTPBasicAuth
 
 import config
 
@@ -36,9 +35,9 @@ if xmldoc_root is not None:
     if recent_files:
         builders = []
         headers = {'Content-Type': 'application/xml'} # set what your server accepts
+        parser = etree.XMLParser(ns_clean=True, recover=True, encoding='utf-8')
         xml_url = "{0}/httpAuth/app/rest/projects/id:{1}/buildTypes".format(config.SERVER_URL, config.PROJECT_ID)
         trigger_url = "{0}/app/rest/buildQueue".format(config.SERVER_URL)
-        parser = etree.XMLParser(ns_clean=True, recover=True, encoding='utf-8')
 
         # Read Enqueue build / Trigger build XML configuration file
         build_trigger = None
