@@ -84,3 +84,6 @@ if __name__ == "__main__":
                 print("Failed to create build for {0}".format(job))
     else:
         print("No Updates to create new builds")
+
+# Save last build processed timestamp
+save_last_build_processed_timestamp(config.LAST_PROCESSED_TIMESTAMP_LOG)
