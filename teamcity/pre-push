@@ -47,7 +47,7 @@ BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 if [ "$BRANCH" = "master" ]; then
     # if branch is master, then only proceed.
     # Start processing teamcity jobs
-    python last_dir_processed.py
+    python trigger_build.py
 else
     echo "Current Branch $BRANCH, Nothing to execute."
 fi
