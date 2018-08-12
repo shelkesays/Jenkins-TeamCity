@@ -2,12 +2,12 @@
 <con:soapui-project id="dcfb405c-9f63-463b-b673-e3a77dad591d" activeEnvironment="Default" name="REST Project 2" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" 
 	xmlns:con="http://eviware.com/soapui/config">
 	<con:settings/>
-	<con:interface xsi:type="con:RestService" id="0c0e4f01-2649-4f57-b032-e3581e2c7fcd" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://xxxxxx:xxxxxx" type="rest" 
+	<con:interface xsi:type="con:RestService" id="0c0e4f01-2649-4f57-b032-e3581e2c7fcd" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8111" type="rest" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<con:settings/>
 		<con:definitionCache type="TEXT" rootPart=""/>
 		<con:endpoints>
-			<con:endpoint>http://xxxxxx:xxxxxx</con:endpoint>
+			<con:endpoint>http://localhost:8111</con:endpoint>
 		</con:endpoints>
 		<con:resource name="Builds" path="/app/rest/buildTypes/" id="c95a6451-7e81-4ffb-9999-7b675fde6378">
 			<con:settings/>
@@ -51,17 +51,17 @@
 					<con:settings>
 						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>						</con:setting>
 					</con:settings>
-					<con:endpoint>http://xxxxxx:xxxxxx</con:endpoint>
+					<con:endpoint>http://localhost:8111</con:endpoint>
 					<con:request><![CDATA[<buildType id="test_a" name="test_a" projectId="XmlImport">
-<project id="XXXXXX" name="XXXXXX" parentProjectId="XXXXXX" href="http://xxxxxx:xxxxxx/admin/editProject.html?projectId=XXXXXX" webUrl="http://xxxxxx:xxxxxx/admin/editProject.html?projectId=XXXXXX" />
-<template id="XXXXXX" name="XXXXXX" templateFlag="true" projectName="XXXXXX" projectId="XXXXXX" href="http://xxxxxx:xxxxxx/admin/editBuild.html?id=template:XXXXXX" />
+<project id="XmlImport" name="XML Import" parentProjectId="" href="http://localhost:8111/admin/editProject.html?projectId=XmlImport" webUrl="http://localhost:8111/admin/editProject.html?projectId=XmlImport" />
+<template id="XmlImport_Template" name="template" templateFlag="true" projectName="XML Import" projectId="XmlImport" href="http://localhost:8111/admin/editBuild.html?id=template:XmlImport" />
 <vcs-root-entries>
 <!--vcs-root-entry elements are not necessary-->
 </vcs-root-entries>
 <settings>
 </settings>
 <parameters>
-<property name="XXXXXX" value="XXXXXX" own="true">
+<property name="promotion" value="test_a" own="true">
 </property>
 </parameters>
 <steps>
@@ -75,10 +75,10 @@
 <agent-requirements/>
 <builds href="" />
 </buildType>]]></con:request>
-					<con:originalUri>http://xxxxxx:xxxxxx/app/rest/builds</con:originalUri>
+					<con:originalUri>http://localhost:8111/app/rest/builds</con:originalUri>
 					<con:credentials>
-						<con:username>XXXXXX</con:username>
-						<con:password>XXXXXX</con:password>
+						<con:username>srahul07</con:username>
+						<con:password>rahul</con:password>
 						<con:domain>global</con:domain>
 						<con:selectedAuthProfile>Basic</con:selectedAuthProfile>
 						<con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
