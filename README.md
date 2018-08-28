@@ -24,5 +24,5 @@ empty file inside the folder created, like `test_2` folder has `test.txt`. Then
 only it will be available for `git add` and `git commit` commands.
 
 
-
-
+**Motive:** All the tests are to understand the functionalities of both jenkins
+and teamcity and find the differences.
