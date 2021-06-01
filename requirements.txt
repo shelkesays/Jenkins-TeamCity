@@ -110,7 +110,7 @@ trash-cli==0.12.9.14
 Twisted==17.9.0
 ubuntuone-client-data==14.4
 unity-lens-photos==1.0
-urllib3==1.23
+urllib3==1.26.5
 uTidylib==0.3
 variety==0.6.7
 virtualenv==13.1.2
