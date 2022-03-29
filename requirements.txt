@@ -59,7 +59,7 @@ oauthlib==2.0.6
 olefile==0.45.1
 oneconf==0.3.9
 PAM==0.4.2
-paramiko==2.0.0
+paramiko==2.10.1
 pathlib2==2.3.0
 pep8==1.7.1
 pexpect==4.2.1
